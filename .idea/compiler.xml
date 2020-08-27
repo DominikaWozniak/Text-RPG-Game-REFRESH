@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Text-RPG-Game-REFRESH" target="1.5" />
+      <module name="Text-RPG-Game-REFRESH" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
