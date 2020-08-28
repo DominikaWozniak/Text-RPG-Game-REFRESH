@@ -3,6 +3,7 @@ package services.impl;
 import model.*;
 import services.BackpackService;
 import services.PlayerService;
+import types.AttackType;
 import types.CharacterType;
 
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ public class PlayerServiceImpl implements PlayerService {
     private BackpackService backpackService;
     private List<Armor> armorSlots;
     private List<Weapon> weaponSlots;
+    private AttackType[] attacksTypeArray;
 
 
     public PlayerServiceImpl(){
@@ -23,6 +25,7 @@ public class PlayerServiceImpl implements PlayerService {
         backpackService = new BackpackServiceImpl();
         armorSlots = new LinkedList<>();
         weaponSlots = new LinkedList<>();
+        attacksTypeArray = new AttackType[3];
     }
 
     @Override
@@ -75,7 +78,50 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public void setAttacksToArray(Player player) {
+
+        if (player.getCharacterType() == CharacterType.WARRIOR) {
+            attacksTypeArray[0] = AttackType.STRONG_ATTACK;
+            attacksTypeArray[1] = AttackType.SHOCKWAVE;
+            attacksTypeArray[2] = AttackType.SKULL_CRUSH;
+        }
+        else if (player.getCharacterType() == CharacterType.NECROMANCER) {
+            attacksTypeArray[0] = AttackType.ZOMBIE_ATTACK;
+            attacksTypeArray[1] = AttackType.SCYTHE_CUTTING;
+            attacksTypeArray[2] = AttackType.DRAINING_THE_SOUL;
+        }
+        else if (player.getCharacterType() == CharacterType.ELF) {
+            attacksTypeArray[0] = AttackType.LIGHT_BOW_ATTACK;
+            attacksTypeArray[1] = AttackType.SERIES_FROM_THE_BOW;
+            attacksTypeArray[2] = AttackType.THROW_KNIVES;
+        }
+    }
+
+    @Override
     public void chooseAttack(Player player) {
+        System.out.println("Twoje punkty skupienia: " + player.getFocusPoints());
+        System.out.println("Wybierz typ ataku dostępny dla Twojej postaci: ");
+
+        int z = 0;
+
+        for (int i = 0; i < attacksTypeArray.length; i++) {
+            z++;
+            System.out.println(z + ": " + attacksTypeArray[i]);
+        }
+
+        additionalVar = scanner.nextLine();
+
+        switch (additionalVar){
+            case "1":
+                System.out.println("Twój atak: " + attacksTypeArray[0]);
+                break;
+            case "2":
+                System.out.println("Twój atak: " + attacksTypeArray[1]);
+                break;
+            case "3":
+                System.out.println("Twój atak: " + attacksTypeArray[2]);
+                break;
+        }
 
     }
 
