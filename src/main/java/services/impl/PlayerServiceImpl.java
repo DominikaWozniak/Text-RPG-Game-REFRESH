@@ -20,7 +20,7 @@ public class PlayerServiceImpl implements PlayerService {
     private AttackType[] attacksTypeArray;
 
 
-    public PlayerServiceImpl(){
+    public PlayerServiceImpl() {
         scanner = new Scanner(System.in);
         backpackService = new BackpackServiceImpl();
         armorSlots = new LinkedList<>();
@@ -38,7 +38,7 @@ public class PlayerServiceImpl implements PlayerService {
                 "2. Necromancer \n" +
                 "3. Elf");
         additionalVar = scanner.nextLine();
-        switch (additionalVar){
+        switch (additionalVar) {
             case "1":
                 player.setCharacterType(CharacterType.WARRIOR);
                 break;
@@ -84,13 +84,11 @@ public class PlayerServiceImpl implements PlayerService {
             attacksTypeArray[0] = AttackType.STRONG_ATTACK;
             attacksTypeArray[1] = AttackType.SHOCKWAVE;
             attacksTypeArray[2] = AttackType.SKULL_CRUSH;
-        }
-        else if (player.getCharacterType() == CharacterType.NECROMANCER) {
+        } else if (player.getCharacterType() == CharacterType.NECROMANCER) {
             attacksTypeArray[0] = AttackType.ZOMBIE_ATTACK;
             attacksTypeArray[1] = AttackType.SCYTHE_CUTTING;
             attacksTypeArray[2] = AttackType.DRAINING_THE_SOUL;
-        }
-        else if (player.getCharacterType() == CharacterType.ELF) {
+        } else if (player.getCharacterType() == CharacterType.ELF) {
             attacksTypeArray[0] = AttackType.LIGHT_BOW_ATTACK;
             attacksTypeArray[1] = AttackType.SERIES_FROM_THE_BOW;
             attacksTypeArray[2] = AttackType.THROW_KNIVES;
@@ -111,15 +109,47 @@ public class PlayerServiceImpl implements PlayerService {
 
         additionalVar = scanner.nextLine();
 
-        switch (additionalVar){
+        switch (additionalVar) {
             case "1":
-                System.out.println("Twój atak: " + attacksTypeArray[0]);
+                System.out.println("Twój atak: " + attacksTypeArray[0] + "\n" +
+                        "Koszt tego ataku to 10 punktów skupienia.");
+
+                player.setFocusPoints(player.getFocusPoints() - 10);
+                System.out.println("Pozostałe punkty skupienia: " + player.getFocusPoints());
+
+                if (player.getFocusPoints() < 0) {
+
+                    player.setFocusPoints(player.getFocusPoints() + 10);
+                    System.out.println("Masz za mało punktów skupienia na ten atak. \n" +
+                            "Odczekaj turę. \n" +
+                            "Punkty skupienia: " + player.getFocusPoints());
+                }
                 break;
+
             case "2":
-                System.out.println("Twój atak: " + attacksTypeArray[1]);
+                if (player.getFocusPoints() >= 15) {
+
+                    System.out.println("Twój atak: " + attacksTypeArray[1] + "\n" +
+                            "Koszt tego ataku to 15 punktów skupienia.");
+                    player.setFocusPoints(player.getFocusPoints() - 15);
+                    System.out.println("Pozostałe punkty skupienia: " + player.getFocusPoints());
+
+                } else {
+                    System.out.println("Masz za mało punktów skupienia. Odczekaj turę.");
+                }
                 break;
+
             case "3":
-                System.out.println("Twój atak: " + attacksTypeArray[2]);
+                if (player.getFocusPoints() >= 20) {
+
+                    System.out.println("Twój atak: " + attacksTypeArray[2] + "\n" +
+                            "Koszt tego ataku to 20 punktów skupienia.");
+                    player.setFocusPoints(player.getFocusPoints() - 20);
+                    System.out.println("Pozostałe punkty skupienia: " + player.getFocusPoints());
+
+                } else {
+                    System.out.println("Masz za mało punktów skupienia.");
+                }
                 break;
         }
 
