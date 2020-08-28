@@ -20,4 +20,5 @@ public interface PlayerService {
 
     void attack(Player player, Enemy enemy);
 
+    void setAttacksToArray(Player player);
 }
