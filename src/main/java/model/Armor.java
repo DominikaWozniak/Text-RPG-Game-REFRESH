@@ -5,12 +5,14 @@ import types.ArmorType;
 public class Armor extends Stats{
 
     private ArmorType armorType;
-    private int additionalArmorPoints;
+    private Integer armorPoints;
 
     public Armor(){}
 
-    public Armor(int charisma, int strength, int agility, int magicEnergy) {
+    public Armor(ArmorType armorType, Integer armorPoints, Integer charisma, Integer strength, Integer agility, Integer magicEnergy) {
         super(charisma, strength, agility, magicEnergy);
+        this.armorType = armorType;
+        this.armorPoints = armorPoints;
     }
 
     public ArmorType getArmorType() {
@@ -21,12 +23,12 @@ public class Armor extends Stats{
         this.armorType = armorType;
     }
 
-    public int getAdditionalArmorPoints() {
-        return additionalArmorPoints;
+    public Integer getArmorPoints() {
+        return armorPoints;
     }
 
-    public void setAdditionalArmorPoints(int additionalArmorPoints) {
-        this.additionalArmorPoints = additionalArmorPoints;
+    public void setArmorPoints(Integer armorPoints) {
+        this.armorPoints = armorPoints;
     }
-
 }
+

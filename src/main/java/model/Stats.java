@@ -2,49 +2,49 @@ package model;
 
 public class Stats {
 
-    private int charisma;
-    private int strength;
-    private int agility;
-    private int magicEnergy;
+    private Integer charisma;
+    private Integer strength;
+    private Integer agility;
+    private Integer magicEnergy;
 
     public Stats(){}
 
-    public Stats(int charisma, int strength, int agility, int magicEnergy) {
+    public Stats(Integer charisma, Integer strength, Integer agility, Integer magicEnergy) {
         this.charisma = charisma;
         this.strength = strength;
         this.agility = agility;
         this.magicEnergy = magicEnergy;
     }
 
-    public int getCharisma() {
+    public Integer getCharisma() {
         return charisma;
     }
 
-    public void setCharisma(int charisma) {
+    public void setCharisma(Integer charisma) {
         this.charisma = charisma;
     }
 
-    public int getStrength() {
+    public Integer getStrength() {
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength(Integer strength) {
         this.strength = strength;
     }
 
-    public int getAgility() {
+    public Integer getAgility() {
         return agility;
     }
 
-    public void setAgility(int agility) {
+    public void setAgility(Integer agility) {
         this.agility = agility;
     }
 
-    public int getMagicEnergy() {
+    public Integer getMagicEnergy() {
         return magicEnergy;
     }
 
-    public void setMagicEnergy(int magicEnergy) {
+    public void setMagicEnergy(Integer magicEnergy) {
         this.magicEnergy = magicEnergy;
     }
 }

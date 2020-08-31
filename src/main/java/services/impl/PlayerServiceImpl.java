@@ -8,6 +8,7 @@ import types.CharacterType;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class PlayerServiceImpl implements PlayerService {
@@ -162,6 +163,24 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public void attack(Player player, Enemy enemy) {
+        int enemyHealthAfterAttack;
+        enemyHealthAfterAttack = enemy.getHealthPoints() - player.getAttackPoints();
+        enemy.setHealthPoints(enemyHealthAfterAttack);
+    }
+
+    @Override
+    public void transferStatsPoints(Player player, String key) {
+
+        Map<String, Integer> stats = player.getStats();
+        Map<String, Armor> armorOnPlayerBody = player.getArmor();
+
+        Armor armor = armorOnPlayerBody.get(key);
+
+        stats.put(key, armor.getArmorPoints() + stats.get(key));
+        stats.put(key, armor.getAgility() + stats.get(key));
+        stats.put(key, armor.getCharisma() + stats.get(key));
+        stats.put(key, armor.getMagicEnergy() + stats.get(key));
+        stats.put(key, armor.getStrength() + stats.get(key));
 
     }
 }

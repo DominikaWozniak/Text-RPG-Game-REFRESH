@@ -1,23 +1,33 @@
 package model;
 
+import java.util.Map;
+
 public class Player extends BaseCharacter {
 
-    private Body armor;
+    private Map<String, Armor> armor;
     private Weapon mainWeapon;
     private int money;
     private int expPoints;
-    private Stats stats;
+    private Map<String, Integer> stats;
     private int focusPoints;
-    private int armorPoints;
 
-    public Player(){}
+    public Player(){
+    }
 
-    public Body getArmor() {
+    public Map<String, Armor> getArmor() {
         return armor;
     }
 
-    public void setArmor(Body armor) {
+    public void setArmor(Map<String, Armor> armor) {
         this.armor = armor;
+    }
+
+    public Map<String, Integer> getStats() {
+        return stats;
+    }
+
+    public void setStats(Map<String, Integer> stats) {
+        this.stats = stats;
     }
 
     public Weapon getMainWeapon() {
@@ -45,13 +55,6 @@ public class Player extends BaseCharacter {
         this.expPoints = expPoints;
     }
 
-    public Stats getStats() {
-        return stats;
-    }
-
-    public void setStats(Stats stats) {
-        this.stats = stats;
-    }
 
     public int getFocusPoints() {
         return focusPoints;
@@ -61,11 +64,4 @@ public class Player extends BaseCharacter {
         this.focusPoints = focusPoints;
     }
 
-    public int getArmorPoints() {
-        return armorPoints;
-    }
-
-    public void setArmorPoints(int armorPoints) {
-        this.armorPoints = armorPoints;
-    }
 }
