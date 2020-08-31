@@ -1,8 +1,8 @@
 package services;
 
-import model.Backpack;
-import model.Enemy;
-import model.Player;
+import model.*;
+
+import java.util.Map;
 
 public interface PlayerService {
 
@@ -21,4 +21,6 @@ public interface PlayerService {
     void attack(Player player, Enemy enemy);
 
     void setAttacksToArray(Player player);
+
+    void transferStatsPoints(Player player, String key);
 }
