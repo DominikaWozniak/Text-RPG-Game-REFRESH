@@ -5,12 +5,14 @@ import types.WeaponType;
 public class Weapon extends Stats{
 
     private WeaponType weaponType;
-    private int damage;
+    private Integer damage;
 
     public Weapon(){}
 
-    public Weapon(int charisma, int strength, int agility, int magicEnergy) {
+    public Weapon(WeaponType weaponType, Integer charisma, Integer strength, Integer agility, Integer magicEnergy, Integer damage) {
         super(charisma, strength, agility, magicEnergy);
+        this.weaponType = weaponType;
+        this.damage = damage;
     }
 
     public WeaponType getWeaponType() {
@@ -21,11 +23,11 @@ public class Weapon extends Stats{
         this.weaponType = weaponType;
     }
 
-    public int getDamage() {
+    public Integer getDamage() {
         return damage;
     }
 
-    public void setDamage(int damage) {
+    public void setDamage(Integer damage) {
         this.damage = damage;
     }
 }

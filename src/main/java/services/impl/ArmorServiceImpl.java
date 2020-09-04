@@ -12,6 +12,6 @@ public class ArmorServiceImpl implements ArmorService {
                 "Charyzma: " + armor.getCharisma() + "\n" +
                 "Siła: " + armor.getStrength() + "\n" +
                 "Zwinność: " + armor.getAgility() + "\n" +
-                "Punkty many: " + armor.getMagicEnergy());
+                "Punkty many: " + armor.getMagicEnergy() + "\n");
     }
 }

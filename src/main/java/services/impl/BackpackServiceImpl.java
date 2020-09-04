@@ -21,17 +21,6 @@ public class BackpackServiceImpl implements BackpackService {
         weaponService = new WeaponServiceImpl();
     }
 
-    @Override
-    public void showItems(List<Armor> armor, List<Weapon> weapon) {
-
-        for (Armor items : armor) {
-            armorService.screenArmorItems(items);
-        }
-
-        for (Weapon items2 : weapon) {
-            weaponService.screenWeaponItems(items2);
-        }
-    }
 
     @Override
     public void addItems(Armor armor, Weapon weapon) {
