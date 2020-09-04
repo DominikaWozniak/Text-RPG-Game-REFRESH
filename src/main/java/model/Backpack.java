@@ -1,90 +1,39 @@
 package model;
 
+import types.ArmorType;
+import types.WeaponType;
+
+import java.util.Map;
+
 public class Backpack {
 
-    private Armor firstSlotArmor;
-    private Armor secondSlotArmor;
-    private Armor thirdSlotArmor;
-    private Armor fourthSlotArmor;
+    private Map<WeaponType, Weapon> weaponsSlots;
+    private Map<ArmorType, Armor> armorSlots;
+    private Integer money;
 
-    private Weapon firstSlotWeapon;
-    private Weapon secondSlotWeapon;
-    private Weapon thirdSlotWeapon;
-    private Weapon fourthSlotWeapon;
+    public Backpack(){}
 
-    public Backpack(){
-        firstSlotArmor = new Armor();
-        secondSlotArmor = new Armor();
-        thirdSlotArmor = new Armor();
-        fourthSlotArmor = new Armor();
-
-        firstSlotWeapon = new Weapon();
-        secondSlotWeapon = new Weapon();
-        thirdSlotWeapon = new Weapon();
-        fourthSlotWeapon = new Weapon();
+    public Map<WeaponType, Weapon> getWeaponsSlots() {
+        return weaponsSlots;
     }
 
-    public Armor getFirstSlotArmor() {
-        return firstSlotArmor;
+    public void setWeaponsSlots(Map<WeaponType, Weapon> weaponsSlots) {
+        this.weaponsSlots = weaponsSlots;
     }
 
-    public void setFirstSlotArmor(Armor firstSlotArmor) {
-        this.firstSlotArmor = firstSlotArmor;
+    public Map<ArmorType, Armor> getArmorSlots() {
+        return armorSlots;
     }
 
-    public Armor getSecondSlotArmor() {
-        return secondSlotArmor;
+    public void setArmorSlots(Map<ArmorType, Armor> armorSlots) {
+        this.armorSlots = armorSlots;
     }
 
-    public void setSecondSlotArmor(Armor secondSlotArmor) {
-        this.secondSlotArmor = secondSlotArmor;
+    public Integer getMoney() {
+        return money;
     }
 
-    public Armor getThirdSlotArmor() {
-        return thirdSlotArmor;
-    }
-
-    public void setThirdSlotArmor(Armor thirdSlotArmor) {
-        this.thirdSlotArmor = thirdSlotArmor;
-    }
-
-    public Armor getFourthSlotArmor() {
-        return fourthSlotArmor;
-    }
-
-    public void setFourthSlotArmor(Armor fourthSlotArmor) {
-        this.fourthSlotArmor = fourthSlotArmor;
-    }
-
-    public Weapon getFirstSlotWeapon() {
-        return firstSlotWeapon;
-    }
-
-    public void setFirstSlotWeapon(Weapon firstSlotWeapon) {
-        this.firstSlotWeapon = firstSlotWeapon;
-    }
-
-    public Weapon getSecondSlotWeapon() {
-        return secondSlotWeapon;
-    }
-
-    public void setSecondSlotWeapon(Weapon secondSlotWeapon) {
-        this.secondSlotWeapon = secondSlotWeapon;
-    }
-
-    public Weapon getThirdSlotWeapon() {
-        return thirdSlotWeapon;
-    }
-
-    public void setThirdSlotWeapon(Weapon thirdSlotWeapon) {
-        this.thirdSlotWeapon = thirdSlotWeapon;
-    }
-
-    public Weapon getFourthSlotWeapon() {
-        return fourthSlotWeapon;
-    }
-
-    public void setFourthSlotWeapon(Weapon fourthSlotWeapon) {
-        this.fourthSlotWeapon = fourthSlotWeapon;
+    public void setMoney(Integer money) {
+        this.money = money;
     }
 }

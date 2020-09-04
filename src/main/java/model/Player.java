@@ -9,10 +9,10 @@ public class Player extends BaseCharacter {
 
     private Map<ArmorType, Armor> armor;
     private Weapon mainWeapon;
-    private int money;
     private int expPoints;
     private Map<StatsEnum, Integer> stats;
     private int focusPoints;
+    private Backpack backpack;
 
     public Player(){
     }
@@ -41,15 +41,6 @@ public class Player extends BaseCharacter {
         this.mainWeapon = mainWeapon;
     }
 
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
     public int getExpPoints() {
         return expPoints;
     }
@@ -67,4 +58,11 @@ public class Player extends BaseCharacter {
         this.focusPoints = focusPoints;
     }
 
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
 }

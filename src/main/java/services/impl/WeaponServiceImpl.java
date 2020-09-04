@@ -12,6 +12,6 @@ public class WeaponServiceImpl implements WeaponService {
                 "Charyzma: " + weapon.getCharisma() + "\n" +
                 "Siła: " + weapon.getStrength() + "\n" +
                 "Zwinność: " + weapon.getAgility() + "\n" +
-                "Punkty many: " + weapon.getMagicEnergy());
+                "Punkty many: " + weapon.getMagicEnergy() + "\n");
     }
 }

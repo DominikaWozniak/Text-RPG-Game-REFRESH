@@ -1,12 +1,11 @@
 package services.impl;
 
 import model.*;
+import services.ArmorService;
 import services.BackpackService;
 import services.PlayerService;
-import types.ArmorType;
-import types.AttackType;
-import types.CharacterType;
-import types.StatsEnum;
+import services.WeaponService;
+import types.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -17,18 +16,16 @@ public class PlayerServiceImpl implements PlayerService {
 
     private Scanner scanner;
     private String additionalVar;
-    private BackpackService backpackService;
-    private List<Armor> armorSlots;
-    private List<Weapon> weaponSlots;
     private AttackType[] attacksTypeArray;
+    private ArmorService armorService;
+    private WeaponService weaponService;
 
 
     public PlayerServiceImpl() {
         scanner = new Scanner(System.in);
-        backpackService = new BackpackServiceImpl();
-        armorSlots = new LinkedList<>();
-        weaponSlots = new LinkedList<>();
         attacksTypeArray = new AttackType[3];
+        armorService = new ArmorServiceImpl();
+        weaponService = new WeaponServiceImpl();
     }
 
     @Override
@@ -57,17 +54,19 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public void showBackpack(Backpack backpack) {
-        armorSlots.add(backpack.getFirstSlotArmor());
-        armorSlots.add(backpack.getSecondSlotArmor());
-        armorSlots.add(backpack.getThirdSlotArmor());
-        armorSlots.add(backpack.getFourthSlotArmor());
+        Map<ArmorType, Armor> armorFromBackpack = backpack.getArmorSlots();
+        Map<WeaponType, Weapon> weaponInBackpack = backpack.getWeaponsSlots();
 
-        weaponSlots.add(backpack.getFirstSlotWeapon());
-        weaponSlots.add(backpack.getSecondSlotWeapon());
-        weaponSlots.add(backpack.getThirdSlotWeapon());
-        weaponSlots.add(backpack.getFourthSlotWeapon());
+        System.out.println("PRZEDMIOTY W PLECAKU" + "\n" +
+                "Złoto: " + backpack.getMoney() + "\n");
 
-        backpackService.showItems(armorSlots, weaponSlots);
+            armorFromBackpack.forEach((x, y) ->
+                armorService.screenArmorItems(armorFromBackpack.get(x))
+            );
+
+            weaponInBackpack.forEach((x, y) ->
+                weaponService.screenWeaponItems(weaponInBackpack.get(x)));
+
     }
 
     @Override
