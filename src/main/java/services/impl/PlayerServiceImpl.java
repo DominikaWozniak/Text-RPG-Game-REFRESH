@@ -3,8 +3,10 @@ package services.impl;
 import model.*;
 import services.BackpackService;
 import services.PlayerService;
+import types.ArmorType;
 import types.AttackType;
 import types.CharacterType;
+import types.StatsEnum;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -169,18 +171,18 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void transferStatsPoints(Player player, String key) {
+    public void transferStatsPoints(Player player, ArmorType armorKey, StatsEnum statsKey) {
 
-        Map<String, Integer> stats = player.getStats();
-        Map<String, Armor> armorOnPlayerBody = player.getArmor();
+        Map<StatsEnum, Integer> stats = player.getStats();
+        Map<ArmorType, Armor> armorOnPlayerBody = player.getArmor();
 
-        Armor armor = armorOnPlayerBody.get(key);
+        Armor armor = armorOnPlayerBody.get(armorKey);
 
-        stats.put(key, armor.getArmorPoints() + stats.get(key));
-        stats.put(key, armor.getAgility() + stats.get(key));
-        stats.put(key, armor.getCharisma() + stats.get(key));
-        stats.put(key, armor.getMagicEnergy() + stats.get(key));
-        stats.put(key, armor.getStrength() + stats.get(key));
+        stats.put(statsKey, armor.getArmorPoints() + stats.get(statsKey));
+        stats.put(statsKey, armor.getAgility() + stats.get(statsKey));
+        stats.put(statsKey, armor.getCharisma() + stats.get(statsKey));
+        stats.put(statsKey, armor.getMagicEnergy() + stats.get(statsKey));
+        stats.put(statsKey, armor.getStrength() + stats.get(statsKey));
 
     }
 }
