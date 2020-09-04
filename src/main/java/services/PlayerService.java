@@ -1,6 +1,8 @@
 package services;
 
 import model.*;
+import types.ArmorType;
+import types.StatsEnum;
 
 import java.util.Map;
 
@@ -22,5 +24,5 @@ public interface PlayerService {
 
     void setAttacksToArray(Player player);
 
-    void transferStatsPoints(Player player, String key);
+    void transferStatsPoints(Player player, ArmorType armorKey, StatsEnum statsKey);
 }

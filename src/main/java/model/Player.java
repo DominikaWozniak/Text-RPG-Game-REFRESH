@@ -1,32 +1,35 @@
 package model;
 
+import types.ArmorType;
+import types.StatsEnum;
+
 import java.util.Map;
 
 public class Player extends BaseCharacter {
 
-    private Map<String, Armor> armor;
+    private Map<ArmorType, Armor> armor;
     private Weapon mainWeapon;
     private int money;
     private int expPoints;
-    private Map<String, Integer> stats;
+    private Map<StatsEnum, Integer> stats;
     private int focusPoints;
 
     public Player(){
     }
 
-    public Map<String, Armor> getArmor() {
+    public Map<ArmorType, Armor> getArmor() {
         return armor;
     }
 
-    public void setArmor(Map<String, Armor> armor) {
+    public void setArmor(Map<ArmorType, Armor> armor) {
         this.armor = armor;
     }
 
-    public Map<String, Integer> getStats() {
+    public Map<StatsEnum, Integer> getStats() {
         return stats;
     }
 
-    public void setStats(Map<String, Integer> stats) {
+    public void setStats(Map<StatsEnum, Integer> stats) {
         this.stats = stats;
     }
 

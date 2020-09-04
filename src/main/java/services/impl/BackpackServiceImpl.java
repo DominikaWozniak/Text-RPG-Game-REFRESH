@@ -5,8 +5,11 @@ import model.Weapon;
 import services.ArmorService;
 import services.BackpackService;
 import services.WeaponService;
+import types.ArmorType;
+import types.WeaponType;
 
 import java.util.List;
+import java.util.Map;
 
 public class BackpackServiceImpl implements BackpackService {
 
@@ -31,12 +34,17 @@ public class BackpackServiceImpl implements BackpackService {
     }
 
     @Override
-    public void removeItem(Armor armor, Weapon weapon) {
+    public void addItems(Armor armor, Weapon weapon) {
 
     }
 
     @Override
-    public void addItems(Armor armor, Weapon weapon) {
+    public void removeItem(Map<ArmorType, Armor> armors, Map<WeaponType, Weapon> weapons, String key) {
+        
+    }
+
+    @Override
+    public void sellItem(Map<ArmorType, Armor> armors, Map<WeaponType, Weapon> weapons, String key) {
 
     }
 }
