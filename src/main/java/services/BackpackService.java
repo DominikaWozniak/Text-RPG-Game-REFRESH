@@ -1,17 +1,23 @@
 package services;
 
 import model.Armor;
+import model.Backpack;
 import model.Weapon;
 import types.ArmorType;
 import types.WeaponType;
 
-import java.util.Map;
 
 public interface BackpackService {
 
-    void removeItem(Map<ArmorType, Armor> armors, Map<WeaponType, Weapon> weapons, String key);
+    void removeItemWeapon(Backpack backpack, WeaponType key);
 
-    void addItems(Armor armor, Weapon weapon);
+    void removeItemArmor(Backpack backpack, ArmorType key);
 
-    void sellItem(Map<ArmorType, Armor> armors, Map<WeaponType, Weapon> weapons, String key);
+    void addItemArmor(Armor armor, Backpack backpack);
+
+    void addItemWeapon(Weapon weapon, Backpack backpack);
+
+    void sellItemArmor(Backpack backpack, ArmorType key, Integer money);
+
+    void sellItemWeapon(Backpack backpack, WeaponType key, Integer money);
 }
