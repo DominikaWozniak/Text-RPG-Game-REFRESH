@@ -24,5 +24,5 @@ public interface PlayerService {
 
     void setAttacksToArray(Player player);
 
-    void transferStatsPoints(Player player, ArmorType armorKey, StatsEnum statsKey);
+    void transferStatsPoints(Player player, ArmorType armorKey);
 }

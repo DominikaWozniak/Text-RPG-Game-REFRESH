@@ -170,18 +170,17 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void transferStatsPoints(Player player, ArmorType armorKey, StatsEnum statsKey) {
-
-        Map<StatsEnum, Integer> stats = player.getStats();
+    public void transferStatsPoints(Player player, ArmorType armorKey) {
         Map<ArmorType, Armor> armorOnPlayerBody = player.getArmor();
+        Stats playerStats = player.getStats();
 
         Armor armor = armorOnPlayerBody.get(armorKey);
 
-        stats.put(statsKey, armor.getArmorPoints() + stats.get(statsKey));
-        stats.put(statsKey, armor.getAgility() + stats.get(statsKey));
-        stats.put(statsKey, armor.getCharisma() + stats.get(statsKey));
-        stats.put(statsKey, armor.getMagicEnergy() + stats.get(statsKey));
-        stats.put(statsKey, armor.getStrength() + stats.get(statsKey));
+        player.setArmorPoints(player.getArmorPoints() + armor.getArmorPoints());
 
+        playerStats.setAgility(playerStats.getAgility() + armor.getAgility());
+        playerStats.setCharisma(playerStats.getCharisma() + armor.getCharisma());
+        playerStats.setStrength(playerStats.getStrength() + armor.getStrength());
+        playerStats.setMagicEnergy(playerStats.getMagicEnergy() + armor.getMagicEnergy());
     }
 }

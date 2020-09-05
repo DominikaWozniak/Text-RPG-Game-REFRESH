@@ -10,7 +10,8 @@ public class Player extends BaseCharacter {
     private Map<ArmorType, Armor> armor;
     private Weapon mainWeapon;
     private int expPoints;
-    private Map<StatsEnum, Integer> stats;
+    private Stats stats;
+    private Integer armorPoints;
     private int focusPoints;
     private Backpack backpack;
 
@@ -25,12 +26,20 @@ public class Player extends BaseCharacter {
         this.armor = armor;
     }
 
-    public Map<StatsEnum, Integer> getStats() {
+    public Stats getStats() {
         return stats;
     }
 
-    public void setStats(Map<StatsEnum, Integer> stats) {
+    public void setStats(Stats stats) {
         this.stats = stats;
+    }
+
+    public Integer getArmorPoints() {
+        return armorPoints;
+    }
+
+    public void setArmorPoints(Integer armorPoints) {
+        this.armorPoints = armorPoints;
     }
 
     public Weapon getMainWeapon() {
