@@ -8,14 +8,17 @@ public enum AttackType {
     STRONG_ATTACK,
     SHOCKWAVE,
     SKULL_CRUSH,
+    EPIC_CUT_BY_SWORD,
+    HAMMER_TIME,
 
     /**
      * attack for NECROMANCER
      */
     ZOMBIE_ATTACK,
     DRAINING_THE_SOUL,
-    SCYTHE_CUTTING,
-
+    GRIM_SCYTHE,
+    BLOOD_SPIKES_SPELL,
+    EXPLODING_ZOMBIES,
 
     /**
      * attack for ELF
@@ -23,5 +26,7 @@ public enum AttackType {
     SERIES_FROM_THE_BOW,
     LIGHT_BOW_ATTACK,
     THROW_KNIVES,
+    SWORD_ATTACK,
+    ATTACK_FROM_BEHIND,
 
 }
