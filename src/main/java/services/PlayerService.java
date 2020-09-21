@@ -22,7 +22,11 @@ public interface PlayerService {
 
     void attack(Player player, Enemy enemy);
 
-    void setAttacksToArray(Player player);
+    void setAttacksAndDamageToMap(Player player);
 
     void transferStatsPoints(Player player, ArmorType armorKey);
+
+    void addAttacksToArray(Player player);
+
+    void addFocusPointsToMap(Player player);
 }
